@@ -9,37 +9,40 @@
 
 //STEP 1:
 
-// var userMail = prompt('Inserisci la tua email');
+var userMail = prompt('Inserisci la tua email', "mailCorretta@mail.it");
 
-// VALIDATION: 
+//VALIDATION: 
 
-// if (userMail < 1) {
-//     alert('Non hai inserito dati validi');
-// }
+if (userMail < 1) {
+    alert('Non hai inserito dati validi');
+}
 
-// //STEP 2:
+//STEP 2:
 
-// var listaMail = ["mailCorretta@mail.it", "mailRandom1@mail.it", "mailRandom2@mail.it", "mailRandom3@mail.it" ];
+var listaMail = ["mailCorretta@mail.it", "mailRandom1@mail.it", "mailRandom2@mail.it", "mailRandom3@mail.it"];
 
 //STEP 3-4:
 
-// var displayFeedback = document.getElementById('userFeedback');
+var isAllowed = false;
+var displayFeedback = document.getElementById('userFeedback');
 
-//     if (listaMail.includes(userMail)) {
+for (var i = 0; i < listaMail.length; i++) {
 
-//          displayFeedback.innerText= "Congratulazioni, hai effettuato il login :)";
+    if (userMail === listaMail[i]) {
+        isAllowed = true;
+    }
+}
 
-//     }
+if (isAllowed) {
+    displayFeedback.innerText = "Congratulazioni, hai effettuato il login :)";
+}
+else {
+    displayFeedback.innerText = "Ops! Non hai i permessi per accedere :(";
+}
 
-//     else {
-//         displayFeedback.innerText = "Ops! Non hai i permessi per accedere :(";
-
-//     }
-
-
-// // console check:
-// console.table(listaMail);
-// console.log(userMail);
+// console check:
+console.table(listaMail);
+console.log(userMail);
 
 
 /* ESERCIZIO DADI
@@ -50,25 +53,25 @@
 
 */
 
-//STEP 1: 
+// //STEP 1: 
 
-var userNumber = Math.floor(Math.random() * 6) + 1;
-var cpuNumber =  Math.floor(Math.random() * 6) + 1;
+// var userNumber = Math.floor(Math.random() * 6) + 1;
+// var cpuNumber =  Math.floor(Math.random() * 6) + 1;
 
-//STEP 2-3:
+// //STEP 2-3:
 
-var winnerLoser = document.getElementById('gameEnd');
+// var winnerLoser = document.getElementById('gameEnd');
 
-if(userNumber > cpuNumber) {
-    gameEnd.innerText= "Congratulazioni, hai vinto!";
-} else if (userNumber < cpuNumber) {
-    gameEnd.innerText= "Hai perso!";
-}
+// if(userNumber > cpuNumber) {
+//     gameEnd.innerText= "Congratulazioni, hai vinto!";
+// } else if (userNumber < cpuNumber) {
+//     gameEnd.innerText= "Hai perso!";
+// }
 
-else {
-    gameEnd.innerText= "Pareggio. Incredibile.";
-}
+// else {
+//     gameEnd.innerText= "Pareggio. Incredibile.";
+// }
 
-// console check:
-console.log(userNumber);
-console.log(cpuNumber);
+// // console check:
+// console.log(userNumber);
+// console.log(cpuNumber);
